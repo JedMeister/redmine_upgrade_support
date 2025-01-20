@@ -11,11 +11,11 @@ fi
 
 APP_DIR="/var/www/$APP"
 
-ls -lA "$APP_DIR" > "$DUMP_DIR/app-dir"
+ls -lA "$APP_DIR" > "$DUMP_DIR/app-dir-$APP"
 ls -lA "$APP_DIR/config" > "$DUMP_DIR/redmine-conf-dir"
 ls -lA "/srv/repos/svn" > "$DUMP_DIR/repo-dirs"
 
-for CONF in "$CONFIG_DIR/"*yml*; do
+for CONF in "$APP_DIR/config/"*yml*; do
     cp -a "$CONF" "$DUMP_DIR/conf/"
 done
 
